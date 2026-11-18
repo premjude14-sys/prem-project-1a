@@ -1,4 +1,3 @@
-+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -322,18 +321,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 76px;
+      height: 64px;
+      padding: 0 1rem;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.6rem;
+      flex-shrink: 0;
+      max-width: calc(100% - 180px);
     }
 
     .logo-img-wrap {
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       padding: 2px;
       background: var(--gold-gradient);
@@ -360,19 +362,23 @@
 
     .brand-title {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #ffffff;
-      line-height: 1.15;
-      letter-spacing: 0.3px;
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .brand-subtitle {
-      font-size: 0.72rem;
+      font-size: 0.65rem;
       font-weight: 600;
       color: var(--gold-light);
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     .desktop-nav {
@@ -487,10 +493,10 @@
     /* Mobile Menu Drawer */
     .mobile-drawer {
       position: fixed;
-      top: 76px;
+      top: 64px;
       left: 0;
       width: 100%;
-      max-height: calc(100vh - 76px);
+      max-height: calc(100vh - 64px);
       background: rgba(9, 26, 54, 0.98);
       backdrop-filter: blur(15px);
       border-bottom: 3px solid var(--gold);
@@ -2508,7 +2514,229 @@
         height: 300px !important;
       }
     }
-  </style>
+  
+    /* ============================================================
+       MOBILE RESPONSIVE OVERRIDES (< 768px)
+       ============================================================ */
+    @media (max-width: 767px) {
+
+      /* Layout fundamentals */
+      .container { padding-left: 1rem; padding-right: 1rem; }
+
+      /* ---- NAVBAR ---- */
+      .nav-container { height: 64px; padding: 0 1rem; }
+      .brand-logo { max-width: calc(100% - 160px); gap: 0.5rem; }
+      .logo-img-wrap { width: 40px; height: 40px; }
+      .brand-title { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+      .brand-subtitle { font-size: 0.6rem; letter-spacing: 0.5px; }
+      .nav-actions { gap: 0.4rem; }
+      .btn-lang { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
+      .btn-theme { padding: 0.3rem 0.5rem; font-size: 0.85rem; }
+      .hamburger { width: 38px; height: 38px; padding: 8px; }
+
+      /* ---- HERO ---- */
+      .hero-section { padding: 4rem 0 3rem; min-height: auto; text-align: center; }
+      .hero-badge { font-size: 0.8rem; padding: 0.5rem 1rem; }
+      .hero-title { font-size: 2.4rem; line-height: 1.1; }
+      .hero-subtitle { font-size: 1rem; }
+      .hero-desc { font-size: 0.95rem; }
+      .hero-buttons { flex-direction: column; align-items: center; gap: 1rem; }
+      .hero-buttons .btn { width: 100%; max-width: 320px; min-width: unset; justify-content: center; }
+      .countdown-box { padding: 1rem; gap: 0.75rem; }
+      .countdown-unit { min-width: 52px; }
+      .countdown-num { font-size: 1.6rem; }
+      .countdown-label { font-size: 0.6rem; }
+      .hero-highlights { grid-template-columns: 1fr; gap: 0.75rem; }
+      .hero-highlight-card { padding: 0.75rem; }
+
+      /* ---- ABOUT ---- */
+      .about-section { padding: 3rem 0; }
+      .about-grid { gap: 2rem; }
+      .about-text h3 { font-size: 1.5rem; }
+      .about-lead { font-size: 1rem; }
+      .vision-mission-cards { grid-template-columns: 1fr; }
+      .about-image-wrap { border-radius: 1rem; overflow: hidden; }
+      .about-image-wrap img { width: 100%; height: auto; border-radius: 1rem; }
+      .about-stats { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+      .stat-item { flex: 0 0 calc(50% - 0.5rem); text-align: center; }
+
+      /* ---- SERVICES ---- */
+      .services-section { padding: 3rem 0; }
+      .service-cards-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .service-card { margin: 0; }
+      .service-card-banner { padding: 1.5rem 1.25rem 1.25rem; }
+      .service-title { font-size: 1.5rem !important; }
+      .service-card-body { padding: 1.25rem; }
+      .service-details { flex-direction: column; gap: 0.5rem; }
+
+      /* ---- PASTOR ---- */
+      .pastor-section { padding: 3rem 0; }
+      .pastor-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .pastor-photo-frame { max-width: 280px; margin: 0 auto; }
+      .pastor-name { font-size: 1.8rem; }
+      .pastor-title { font-size: 1rem; }
+      .pastor-quote { font-size: 1rem; padding: 1rem; }
+      .pastor-tags { flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+
+      /* ---- PROMISES ---- */
+      .promises-section { padding: 3rem 0; }
+      .promise-moods { flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+      .mood-chip { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+      .promise-card { padding: 1.5rem 1.25rem; }
+      .promise-verse { font-size: 1.1rem; }
+
+      /* ---- VERSE ---- */
+      .verses-section { padding: 3rem 0; }
+      .verse-carousel-wrap { padding: 1.5rem 1rem; }
+      .verse-text { font-size: 1.15rem; }
+      .verse-ref { font-size: 0.85rem; }
+      .verse-nav-btn { width: 36px; height: 36px; }
+
+      /* ---- GALLERY ---- */
+      .gallery-section { padding: 3rem 0; }
+      .gallery-filter { flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+      .filter-btn { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+      .gallery-item { border-radius: 0.5rem; }
+
+      /* ---- PRAYER ---- */
+      .prayer-section { padding: 3rem 0; }
+      .prayer-form-wrap { padding: 1.5rem 1rem; }
+      .prayer-form-title { font-size: 1.5rem; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea { font-size: 1rem; }
+      .prayer-candle-wrap { padding: 1.5rem; }
+
+      /* ---- CONTACT ---- */
+      .contact-section { padding: 3rem 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-info-cards { gap: 1rem; }
+      .contact-info-card { padding: 1rem; }
+      .contact-actions { flex-direction: column; gap: 0.75rem; }
+      .contact-actions .btn { width: 100%; justify-content: center; }
+      .map-embed { height: 240px; border-radius: 0.75rem; }
+
+      /* ---- FOOTER ---- */
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .footer-links { justify-content: center; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      /* ---- SECTION HEADERS ---- */
+      .section-title { font-size: 2rem; }
+      .section-subtitle { font-size: 1rem; }
+
+      /* ---- BACK TO TOP ---- */
+      .back-to-top { bottom: 1.5rem; right: 1rem; width: 44px; height: 44px; }
+
+      /* ---- PRAYER CANDLE ---- */
+      #prayer-candle-section { padding: 2rem 1rem; }
+
+      /* ---- GENERAL ---- */
+      h2 { font-size: 1.75rem; }
+      h3 { font-size: 1.35rem; }
+      .btn { padding: 0.75rem 1.5rem; }
+      .btn-sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    }
+
+    /* ---- VERY SMALL PHONES (< 400px) ---- */
+    @media (max-width: 399px) {
+      .hero-title { font-size: 2rem; }
+      .brand-title { font-size: 0.82rem; max-width: 120px; }
+      .btn-lang span:last-child { display: none; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .countdown-unit { min-width: 44px; }
+      .countdown-num { font-size: 1.4rem; }
+    }
+
+    /* ---- TABLET (768px - 991px) ---- */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .hero-title { font-size: 3rem; }
+      .hero-buttons { justify-content: center; }
+      .service-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .pastor-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pastor-photo-frame { max-width: 320px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    
+    /* ============================================================
+       UI BEAUTY ENHANCEMENTS
+       ============================================================ */
+
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+
+    /* Enhanced section titles */
+    .section-title {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #1a4a8a 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    [data-theme="dark"] .section-title {
+      background: linear-gradient(135deg, #fff 0%, var(--gold-light) 60%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    /* Enhanced service card banner gradient */
+    .service-card-banner {
+      background: linear-gradient(135deg, #0a1f4e 0%, #1a3a8a 60%, #0d2060 100%) !important;
+    }
+    .service-card {
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(212,175,55,0.2);
+    }
+
+    /* Gold shimmer on buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #f5d060 50%, #d4af37 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Enhanced hero desc readability */
+    .hero-desc { text-shadow: 0 1px 8px rgba(0,0,0,0.6); }
+
+    /* Navbar enhanced glass effect */
+    .site-header {
+      background: rgba(9,26,54,0.97) !important;
+      box-shadow: 0 2px 20px rgba(212,175,55,0.15);
+    }
+
+    /* Gallery hover glow */
+    .gallery-item:hover {
+      box-shadow: 0 8px 30px rgba(212,175,55,0.35);
+      transform: scale(1.03) translateY(-3px);
+    }
+
+    /* Smooth card entry animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .service-card, .hero-highlight-card, .vm-card {
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    /* Better focus rings for accessibility */
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    </style>
 </head>
 
 <body>
