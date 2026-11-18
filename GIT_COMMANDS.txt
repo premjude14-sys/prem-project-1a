@@ -1,0 +1,135 @@
+================================================================
+  GIT COMMANDS GUIDE - GLORIOUS ZION CHURCH WEBSITE
+  Repository: https://github.com/premjude14-sys/project-1
+================================================================
+
+NOTE: Before running any git command, add Git to PATH in your
+      PowerShell session by running this once:
+      $env:Path += ";C:\Program Files\Git\cmd;C:\Program Files\Git\bin"
+
+
+================================================================
+  PART 1: FIRST TIME SETUP (Run only once per machine)
+================================================================
+
+Step 1: Set your GitHub identity
+---------------------------------
+git config user.name "premjude14-sys"
+git config user.email "premjude14@users.noreply.github.com"
+
+Step 2: Initialize repository in your project folder
+------------------------------------------------------
+cd "D:\church web"
+git init
+
+Step 3: Stage all files
+---------------------------------
+git add .
+
+Step 4: Create first commit
+---------------------------------
+git commit -m "Initial commit of Glorious Zion Church website"
+
+Step 5: Set branch name to main
+---------------------------------
+git branch -M main
+
+Step 6: Link to your GitHub repository
+---------------------------------
+git remote add origin https://github.com/premjude14-sys/project-1.git
+
+Step 7: Push everything to GitHub (force overwrites existing files)
+---------------------------------
+git push -u origin main --force
+
+
+================================================================
+  PART 2: DAILY WORKFLOW - After Making Edits Locally
+================================================================
+
+Whenever you edit index.html, add images, or change any file:
+
+Step 1: Check what has changed
+---------------------------------
+git status
+
+Step 2: Stage ALL changes (edits + new files + deletions)
+---------------------------------
+git add .
+        OR just one specific file:
+git add index.html
+
+Step 3: Commit with a message describing what you changed
+---------------------------------
+git commit -m "Updated gallery section and fixed mobile layout"
+
+Step 4: Push to GitHub (updates remote with your local changes)
+---------------------------------
+git push
+
+
+================================================================
+  PART 3: IF YOU DELETE A FILE LOCALLY (Reflect on GitHub)
+================================================================
+
+When you delete a file on your computer, do this:
+
+git add .                              <- Stages the deletion
+git commit -m "Removed old file XYZ"
+git push
+
+  OR explicitly remove a specific file:
+git rm filename.jpg
+git commit -m "Removed filename.jpg"
+git push
+
+
+================================================================
+  PART 4: USEFUL EVERYDAY COMMANDS
+================================================================
+
+Check current status of files:
+---------------------------------
+git status
+
+See all previous commits:
+---------------------------------
+git log --oneline
+
+Undo all unsaved local changes (WARNING: cannot undo!):
+---------------------------------
+git checkout -- .
+
+Pull latest changes from GitHub to local:
+---------------------------------
+git pull origin main
+
+See what remote is linked:
+---------------------------------
+git remote -v
+
+
+================================================================
+  PART 5: QUICK 3-COMMAND DAILY UPDATE (Most Common)
+================================================================
+
+After editing any file, just run these 3 commands:
+
+git add .
+git commit -m "Your description of what you changed"
+git push
+
+
+================================================================
+  GITHUB PAGES (Live Website URL)
+================================================================
+
+After pushing, your website is live at:
+https://premjude14-sys.github.io/project-1/
+
+To enable GitHub Pages (one time only):
+1. Go to: https://github.com/premjude14-sys/project-1/settings/pages
+2. Under Branch: select "main" and "/ (root)"
+3. Click Save
+
+================================================================

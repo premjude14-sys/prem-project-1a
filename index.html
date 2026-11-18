@@ -573,18 +573,7 @@
       pointer-events: none;
     }
 
-    .hero-cross-watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 32rem;
-      color: rgba(255, 255, 255, 0.018);
-      font-family: var(--font-serif);
-      user-select: none;
-      pointer-events: none;
-      line-height: 0;
-    }
+    /* hero-cross-watermark removed */
 
     .hero-content {
       position: relative;
@@ -999,11 +988,16 @@
 
     .service-title {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
+      
+      
       color: #ffffff;
       line-height: 1.2;
       margin-bottom: 0.25rem;
+    
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
     }
 
     .service-time-box {
@@ -2116,7 +2110,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-  
+
     /* ==========================================================================
        3D GRAPHICS, PARTICLES & MOBILE-FIRST RESPONSIVE ENHANCEMENTS
        ========================================================================== */
@@ -2166,9 +2160,20 @@
     }
 
     @keyframes beamSway {
-      0% { transform: rotate(-15deg) scaleY(0.95); opacity: 0.2; }
-      50% { transform: rotate(-10deg) scaleY(1.1); opacity: 0.45; }
-      100% { transform: rotate(-18deg) scaleY(1); opacity: 0.25; }
+      0% {
+        transform: rotate(-15deg) scaleY(0.95);
+        opacity: 0.2;
+      }
+
+      50% {
+        transform: rotate(-10deg) scaleY(1.1);
+        opacity: 0.45;
+      }
+
+      100% {
+        transform: rotate(-18deg) scaleY(1);
+        opacity: 0.25;
+      }
     }
 
     /* 3D Perspective Tilt Card System */
@@ -2352,9 +2357,17 @@
     }
 
     @keyframes flameWiggle {
-      0% { transform: translateX(-50%) rotate(-2deg) scale(1); }
-      50% { transform: translateX(-50%) rotate(3deg) scale(1.08, 0.95); }
-      100% { transform: translateX(-50%) rotate(-3deg) scale(0.95, 1.05); }
+      0% {
+        transform: translateX(-50%) rotate(-2deg) scale(1);
+      }
+
+      50% {
+        transform: translateX(-50%) rotate(3deg) scale(1.08, 0.95);
+      }
+
+      100% {
+        transform: translateX(-50%) rotate(-3deg) scale(0.95, 1.05);
+      }
     }
 
     .candle-flame-halo {
@@ -2371,8 +2384,15 @@
     }
 
     @keyframes haloPulse {
-      0% { transform: translateX(-50%) scale(0.9); opacity: 0.6; }
-      100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+      0% {
+        transform: translateX(-50%) scale(0.9);
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 1;
+      }
     }
 
     .candle-wick {
@@ -2416,32 +2436,14 @@
     }
 
     /* Mobile Bottom Quick Action Bar */
-    .mobile-bottom-bar {
-      display: none;
-    }
+    /* mobile-bottom-bar CSS removed */
 
     @media (max-width: 991px) {
       body {
         padding-bottom: 74px !important;
       }
 
-      .mobile-bottom-bar {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 66px;
-        background: rgba(9, 26, 54, 0.94);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border-top: 1px solid rgba(212, 175, 55, 0.35);
-        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.45);
-        z-index: 2200;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0 0.35rem;
-      }
+      /* mobile-bottom-bar CSS removed */
 
       .mobile-bar-action {
         display: flex;
@@ -2506,7 +2508,6 @@
         height: 300px !important;
       }
     }
-
   </style>
 </head>
 
@@ -2601,7 +2602,7 @@
        ========================================================================== */ -->
   <section class="hero-section" id="hero">
     <div class="hero-bg-overlay"></div>
-    <div class="hero-cross-watermark">✝</div>
+    
 
     <div class="container hero-content">
 
@@ -2829,7 +2830,7 @@
           <div class="service-card-banner">
             <div class="service-badge-pill" data-en="Main Service" data-ta="முக்கிய ஆராதனை">Main Service</div>
             <div class="service-icon-circle">⛪</div>
-            <h3 class="service-title" data-en="Sunday Worship Service" data-ta="ஞாயிறு ஆராதனை">Sunday Worship Service
+            <h3 class="service-title" data-en="Sunday Worship Service" data-ta="ஞாயிறு ஆராதனை" style="font-size:2rem;font-weight:900;color:var(--gold);letter-spacing:-0.5px;">Sunday Worship Service
             </h3>
             <div class="service-time-box">
               <span>📅</span>
@@ -2925,8 +2926,11 @@
     <div class="container">
       <div class="section-header fade-in-element">
         <div class="section-badge" data-en="Spiritual Touch" data-ta="தேவ வாக்குத்தத்தம்">Spiritual Touch</div>
-        <h2 class="section-title" data-en="A Word for Your Soul Today" data-ta="உங்கள் இருதயத்திற்கான தேவ வார்த்தை">A Word for Your Soul Today</h2>
-        <p class="section-desc" data-en="Tap any topic below to receive an inspired scripture promise and encouraging prayer from Pastor P. Titus." data-ta="உங்கள் இருதயத்தின் தேவையைத் தேர்ந்தெடுத்து, தேவனுடைய விசேஷித்த வாக்குத்தத்தத்தையும் போதகரின் ஜெபத்தையும் பெற்றுக்கொள்ளுங்கள்.">
+        <h2 class="section-title" data-en="A Word for Your Soul Today" data-ta="உங்கள் இருதயத்திற்கான தேவ வார்த்தை">A
+          Word for Your Soul Today</h2>
+        <p class="section-desc"
+          data-en="Tap any topic below to receive an inspired scripture promise and encouraging prayer from Pastor P. Titus."
+          data-ta="உங்கள் இருதயத்தின் தேவையைத் தேர்ந்தெடுத்து, தேவனுடைய விசேஷித்த வாக்குத்தத்தத்தையும் போதகரின் ஜெபத்தையும் பெற்றுக்கொள்ளுங்கள்.">
           Tap any topic below to receive an inspired scripture promise and encouraging prayer from Pastor P. Titus.
         </p>
         <div class="gold-divider"><span>✝</span></div>
@@ -2934,12 +2938,18 @@
 
       <!-- Mood & Need Filter Chips -->
       <div class="mood-chips-container fade-in-element">
-        <button class="mood-chip active" data-topic="peace">🕊️ <span data-en="Peace & Comfort" data-ta="சமாதானம் & ஆறுதல்">Peace & Comfort</span></button>
-        <button class="mood-chip" data-topic="healing">❤️ <span data-en="Physical Healing" data-ta="சரீர சுகம்">Physical Healing</span></button>
-        <button class="mood-chip" data-topic="strength">🛡️ <span data-en="Strength & Protection" data-ta="பெலன் & பாதுகாப்பு">Strength & Protection</span></button>
-        <button class="mood-chip" data-topic="family">👨‍👩‍👧 <span data-en="Family Blessing" data-ta="குடும்ப ஆசீர்வாதம்">Family Blessing</span></button>
-        <button class="mood-chip" data-topic="career">💼 <span data-en="Job & Breakthrough" data-ta="வேலை & உயர்வு">Job & Breakthrough</span></button>
-        <button class="mood-chip" data-topic="thanks">✨ <span data-en="Joy & Thanksgiving" data-ta="மகிழ்ச்சி & துதி">Joy & Thanksgiving</span></button>
+        <button class="mood-chip active" data-topic="peace">🕊️ <span data-en="Peace & Comfort"
+            data-ta="சமாதானம் & ஆறுதல்">Peace & Comfort</span></button>
+        <button class="mood-chip" data-topic="healing">❤️ <span data-en="Physical Healing" data-ta="சரீர சுகம்">Physical
+            Healing</span></button>
+        <button class="mood-chip" data-topic="strength">🛡️ <span data-en="Strength & Protection"
+            data-ta="பெலன் & பாதுகாப்பு">Strength & Protection</span></button>
+        <button class="mood-chip" data-topic="family">👨‍👩‍👧 <span data-en="Family Blessing"
+            data-ta="குடும்ப ஆசீர்வாதம்">Family Blessing</span></button>
+        <button class="mood-chip" data-topic="career">💼 <span data-en="Job & Breakthrough" data-ta="வேலை & உயர்வு">Job
+            & Breakthrough</span></button>
+        <button class="mood-chip" data-topic="thanks">✨ <span data-en="Joy & Thanksgiving"
+            data-ta="மகிழ்ச்சி & துதி">Joy & Thanksgiving</span></button>
       </div>
 
       <!-- Interactive 3D Promise Card -->
@@ -2947,17 +2957,21 @@
         <div class="card-sheen"></div>
         <div class="promise-icon-bubble" id="promiseTopicIcon">🕊️</div>
         <span class="promise-ref-pill" id="promiseRefPill">John 14:27 | யோவான் 14:27</span>
-        
+
         <div class="promise-quote-box">
-          <h4 id="promiseTitleEn">"Peace I leave with you; my peace I give you. Do not let your hearts be troubled."</h4>
-          <p id="promiseTitleTa" style="color:var(--text-muted); font-size:1.05rem;">"சமாதானத்தை உங்களுக்கு வைத்துப்போகிறேன்; உங்கள் இருதயம் கலங்காமலும் பயப்படாமலும் இருப்பதாக."</p>
+          <h4 id="promiseTitleEn">"Peace I leave with you; my peace I give you. Do not let your hearts be troubled."
+          </h4>
+          <p id="promiseTitleTa" style="color:var(--text-muted); font-size:1.05rem;">"சமாதானத்தை உங்களுக்கு
+            வைத்துப்போகிறேன்; உங்கள் இருதயம் கலங்காமலும் பயப்படாமலும் இருப்பதாக."</p>
         </div>
 
         <div class="promise-pastor-note">
           <strong style="color:var(--royal-blue); display:block; margin-bottom:4px;">
-            🙏 <span data-en="Pastor P. Titus Prays for You:" data-ta="போதகர் P. டைட்டஸ் உங்களுக்காக ஜெபிக்கிறார்:">Pastor P. Titus Prays for You:</span>
+            🙏 <span data-en="Pastor P. Titus Prays for You:"
+              data-ta="போதகர் P. டைட்டஸ் உங்களுக்காக ஜெபிக்கிறார்:">Pastor P. Titus Prays for You:</span>
           </strong>
-          <span id="promisePastorWord">"May God's calming peace fill your soul. Trust His love, for He never leaves you."</span>
+          <span id="promisePastorWord">"May God's calming peace fill your soul. Trust His love, for He never leaves
+            you."</span>
         </div>
 
         <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
@@ -3258,7 +3272,7 @@
 
       <div class="prayer-card-wrap fade-in-element">
 
-        
+
         <!-- Interactive Virtual Prayer Candle -->
         <div class="candle-widget card-3d fade-in-element" id="candleCard" onclick="lightCandleAction()">
           <div class="card-sheen"></div>
@@ -3268,8 +3282,12 @@
             <div class="candle-wick"></div>
             <div class="candle-body">✝</div>
           </div>
-          <h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--gold-light); margin-bottom:0.4rem;" data-en="Light a Prayer Candle for Your Family" data-ta="உங்கள் குடும்பத்திற்காக ஒரு ஜெப தீபம் ஏற்றுங்கள்">Light a Prayer Candle for Your Family</h3>
-          <p style="font-size:0.9rem; color:#cbd5e1; max-width:480px; margin:0 auto;" data-en="Tap the candle with faith. Pastor P. Titus and our intercessors stand with you in agreement." data-ta="விசுவாசத்தோடு மெழுகுவர்த்தியைத் தொட்டு ஜெபியுங்கள். போதகர் டைட்டஸ் உங்களுக்காக தேவ பாதத்தில் மன்றாடுவார்.">
+          <h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--gold-light); margin-bottom:0.4rem;"
+            data-en="Light a Prayer Candle for Your Family" data-ta="உங்கள் குடும்பத்திற்காக ஒரு ஜெப தீபம் ஏற்றுங்கள்">
+            Light a Prayer Candle for Your Family</h3>
+          <p style="font-size:0.9rem; color:#cbd5e1; max-width:480px; margin:0 auto;"
+            data-en="Tap the candle with faith. Pastor P. Titus and our intercessors stand with you in agreement."
+            data-ta="விசுவாசத்தோடு மெழுகுவர்த்தியைத் தொட்டு ஜெபியுங்கள். போதகர் டைட்டஸ் உங்களுக்காக தேவ பாதத்தில் மன்றாடுவார்.">
             Tap the candle with faith. Pastor P. Titus and our intercessors stand with you in agreement.
           </p>
           <div class="candle-counter-row">
@@ -3279,7 +3297,8 @@
           </div>
           <div>
             <button class="btn btn-gold btn-sm" style="pointer-events:none;">
-              ✨ <span id="candleButtonText" data-en="Tap to Offer Prayer" data-ta="ஜெபிக்க தொடவும்">Tap to Offer Prayer</span>
+              ✨ <span id="candleButtonText" data-en="Tap to Offer Prayer" data-ta="ஜெபிக்க தொடவும்">Tap to Offer
+                Prayer</span>
             </button>
           </div>
         </div>
@@ -3464,8 +3483,9 @@
             <div class="contact-card-content">
               <h4 data-en="Service Timings Reminder" data-ta="ஆராதனை நேரங்கள்">Service Timings Reminder</h4>
               <p>
-                <strong>⛪ Sunday Worship Service:</strong> 10:00 AM – 12:00 PM<br>
+                <strong>⛪ Sunday Service:</strong> 10:00 AM – 12:00 PM<br>
                 <strong>🕊️ Friday Fasting Prayer:</strong> 10:00 AM – 12:00 PM
+
               </p>
             </div>
           </div>
@@ -4155,7 +4175,7 @@
       fadeObserver.observe(el);
     });
 
-  
+
     // --- 14. 3D CELESTIAL PARTICLE CANVAS ENGINE ---
     const pCanvas = document.getElementById('particleCanvas');
     if (pCanvas) {
@@ -4498,7 +4518,7 @@
 
     // Hook confetti into existing prayer submit
     const originalSubmitHandler = window.handlePrayerSubmit;
-    window.handlePrayerSubmit = function(e) {
+    window.handlePrayerSubmit = function (e) {
       triggerConfettiBurst();
       if (typeof originalSubmitHandler === 'function') {
         originalSubmitHandler(e);
@@ -4508,32 +4528,7 @@
   </script>
 
   <!-- Mobile Bottom Quick Action Bar (App-like UX) -->
-  <nav class="mobile-bottom-bar" aria-label="Mobile Quick Actions">
-    <a href="tel:+919840330712" class="mobile-bar-action" title="Call Pastor P. Titus">
-      <span class="bar-icon">📞</span>
-      <span data-en="Call" data-ta="அழைக்க">Call</span>
-    </a>
-    <a href="https://wa.me/919840330712?text=Praise%20The%20Lord%20Pastor%20Titus!%20I%20would%20like%20to%20connect%20with%20Glorious%20Zion%20Church." class="mobile-bar-action" title="WhatsApp Pastor">
-      <span class="bar-icon">💬</span>
-      <span data-en="WhatsApp" data-ta="வாட்ஸ்அப்">WhatsApp</span>
-    </a>
-    <a href="#services" class="mobile-bar-action bar-highlight" title="Worship Service">
-      <span class="bar-icon">⛪</span>
-      <span data-en="Worship" data-ta="ஆராதனை">Worship</span>
-    </a>
-    <a href="#promises" class="mobile-bar-action" title="Spiritual Promise">
-      <span class="bar-icon">🕊️</span>
-      <span data-en="Promise" data-ta="வாக்கு">Promise</span>
-    </a>
-    <a href="#prayer" class="mobile-bar-action" title="Send Prayer Request">
-      <span class="bar-icon">🙏</span>
-      <span data-en="Prayer" data-ta="ஜெபம்">Prayer</span>
-    </a>
-    <a href="https://maps.google.com/?q=2+Anna+Street+Subam+Nagar+Puduvattaram+Mangadu+Chennai+600122" target="_blank" class="mobile-bar-action" title="Get Directions">
-      <span class="bar-icon">📍</span>
-      <span data-en="Map" data-ta="மேப்">Map</span>
-    </a>
-  </nav>
+  
 
 </body>
 
